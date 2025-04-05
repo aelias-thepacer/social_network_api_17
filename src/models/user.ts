@@ -26,7 +26,7 @@ const userSchema = new Schema<IUser>(
         thoughts: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'thoughts',
+                ref: 'thought',
             },
         ],
         friends: [
@@ -48,6 +48,6 @@ userSchema.virtual('friendCount').get(function () {
     return this.friends.length;
 });
 
-const User = model<IUser>('User', userSchema);
+const User = model<IUser>('user', userSchema);
 
 export default User;
